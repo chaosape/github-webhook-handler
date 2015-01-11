@@ -1,5 +1,7 @@
 # github-webhook-handler
 
+TODO - This entire file needs to be overhauled.
+
 ## Background
 
 The University of Minnesota's computer science department at times
@@ -45,3 +47,8 @@ TODO
   with github will be required.
 - python sh module (sudo apt-get install python-pip && sudo pip
   install sh)
+
+
+## Notes
+- Some smtp server will be need to send email.
+- All payload description can be found here: https://developer.github.com/v3/activity/events/types/
