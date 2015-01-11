@@ -24,23 +24,24 @@ with respect to how their assignment will be graded by automatic
 grading scripts. The hope is that by doing so, students may be
 pro-active about ensuring that their assignments operated as the
 expect before its due date reducing the number of cases that must be
-investigated and handled manually.
+investigated and handled manually.  
+
 ## Conceptual Operation
 
 The conceptual processing flow of this software flows:
-1) Repositories are setup with a webhook URL in github that is
-   requested, with pertinent information, every time the repository is
-   modified.
-2) A user writes a set of actions.
-3) The server forks a process for each webhook post request to execute actions.
-4) In this process the post information is given to the match method of each 
-action. This method should return true if the action should be run and false 
-otherwise.
-3) A daemon listens to this server queue and, upon receiving a
-   request, reads a configuration files that maps queued information
-   to scripts to be executed.
-4) A script is executed based on the queued information.
+1) Repositories are setup with a webhook URL in github. Information
+   will be posted to this URL every time there is a modification to
+   this repository or its related content (e.g., tasks, wiki).
+3) The server forks a process for each received github webhook post to
+   determine which actions should be run and run them.
+4) In the forked process, the header and body post information from
+   the post are used to determine what actions should be run.
 
 
 ## Installation
-* python sh module (sudo apt-get install python-pip && sudo pip install sh)
+TODO
+
+- If you are using git from the python sh module setting up ssh keys
+  with github will be required.
+- python sh module (sudo apt-get install python-pip && sudo pip
+  install sh)
